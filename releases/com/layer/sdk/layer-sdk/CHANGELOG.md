@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+## 0.8.3
+ * More forgiving connection / authentication state
+ * LayerClient connects again if it was connected when the app was killed
+
 ## 0.8.2
  * Added DeletionMode to deleteMessage() and deleteConversation()
  * Improved sync performance
