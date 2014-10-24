@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+## 0.8.4
+ * Improved connection management.
+ * Improved sync performance.
+ * Made looking LayerObjects up by ID case-insensitive.
+
 ## 0.8.3
  * More forgiving connection / authentication state
  * LayerClient connects again if it was connected when the app was killed
