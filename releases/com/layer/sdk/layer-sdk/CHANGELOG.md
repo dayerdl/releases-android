@@ -1,6 +1,9 @@
 Change Log
 ==========
 
+## 0.8.5
+ * Corrected getConversationsWithParticipants() bug introduced in 0.8.4
+
 ## 0.8.4
  * Improved connection management.
  * Improved sync performance.
