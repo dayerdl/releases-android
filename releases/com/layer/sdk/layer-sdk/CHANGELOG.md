@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+## 0.8.6
+ * Fixed intermittent exception in GcmIntentService line 147 (SUPP-110)
+ * Corrected issues with large numeric participant IDs
+
 ## 0.8.5
  * Corrected getConversationsWithParticipants() bug introduced in 0.8.4
 
