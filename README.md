@@ -2,6 +2,8 @@
 
 This repository contains binary distributions of Android products released by [Layer](http://layer.com).
 
+If you have any questions, comments, or issues related to any products distributed via this repository then please contact the team by emailing [support@layer.com](mailto:support@layer.com). Questions about pricing or product roadmap can be directed to [growth@layer.com](mailto:growth@layer.com).
+
 ## Layer SDK
 
 This repository contains releases of the Android SDK for interacting with the Layer communications cloud. It provides a simple, object oriented interface to the rich messaging capabilities provided by the platform.  See the [changelog](releases/com/layer/sdk/layer-sdk/CHANGELOG.md) for the latest version and updates.
