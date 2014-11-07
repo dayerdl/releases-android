@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+## 0.8.7
+ * LayerClient can be instantiated on a background thread or isolated process
+ * Fixed `No schemas in DataSource set` error when instantiating LayerClient on certain devices (SUPP-116)
+ * Minor efficiency improvements
+
 ## 0.8.6
  * Fixed intermittent exception in GcmIntentService line 147 (SUPP-110)
  * Corrected issues with large numeric participant IDs
