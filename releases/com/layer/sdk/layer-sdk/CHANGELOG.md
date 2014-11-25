@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+## 0.8.8
+ * Added metadata to conversations
+ * Added typing indicators
+ * Reduced database memory footprint
+ * Prevent concurrent database migration errors (SUPP-133)
+ * Improved management of foreground/background state (SUPP-128)
+ * Minor efficiency improvements
+
 ## 0.8.7
  * LayerClient can be instantiated on a background thread or isolated process
  * Fixed `No schemas in DataSource set` error when instantiating LayerClient on certain devices (SUPP-116)
