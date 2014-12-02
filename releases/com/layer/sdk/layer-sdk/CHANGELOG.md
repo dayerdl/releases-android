@@ -1,6 +1,16 @@
 Change Log
 ==========
 
+## 0.8.9
+ * Removed temporary object IDs
+ * Changed permanent object ID URI format to:
+   * layer:///messages/[uuid]
+   * layer:///conversations/[uuid]
+ * Improved push channel management
+ * Added validation for null Conversation in creating and sending Messages, and sending typing indicators.
+ * Added validation for empty and oversized participants for Conversations before sending.
+ * Added validation for incremental participant additions.
+
 ## 0.8.8
  * Added metadata to conversations
  * Added typing indicators
