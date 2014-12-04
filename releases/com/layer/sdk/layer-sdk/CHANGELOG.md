@@ -1,5 +1,4 @@
-Change Log
-==========
+# Android SDK Change Log
 
 ## 0.8.9
  * Removed temporary object IDs
