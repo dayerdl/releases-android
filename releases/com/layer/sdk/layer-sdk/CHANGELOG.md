@@ -1,9 +1,12 @@
 Change Log
 ==========
 
+## 0.8.11
+ * Reverted deauthentication action from 0.8.10 to clearing local data.
+
 ## 0.8.10
  * Improved LayerClient initialization time.
- * Logging out no longer clears local cache.  Unique app IDs and user IDs create persistent caches.
+ * Deauthenticating no longer clears local cache.  Unique app IDs and user IDs create persistent caches.
  * Added check for downgrading database schema (and clearing contents).
  * Fixed intermittent failure to alert change events during sync.
 
