@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+## 0.8.12
+ * Bumped compileSdkVersion to 21 (target and min are still 14)
+ * Bumped buildToolsVersion to 21.1.2
+ * Prioritize sending messages during synchronization.
+ * Removed irrelevant deauthentication errors.
+ * Removed `No subscribers registered for event class` logs.
+ * Fixed intermittent `PERSISTENCE_CLOSED` exceptions during deauthentication.
+
 ## 0.8.11
  * Reverted deauthentication action from 0.8.10 to clearing local data.
 
