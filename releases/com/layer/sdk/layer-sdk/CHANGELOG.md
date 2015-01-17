@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+## 0.8.14
+ * Added `LayerClient.getUnreadMessageCount()` for returning unread message counts for a particular
+   conversation or all conversations.
+
 ## 0.8.13
  * Added heartbeat to typing indicators to handle longer typing sessions (APPS-840).
  * Fixed intermittent NPE in PatchStreamMetadataTaskMaster line 65 (APPS-903, APPS-432).
