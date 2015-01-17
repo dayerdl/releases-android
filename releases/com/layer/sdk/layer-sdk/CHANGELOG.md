@@ -1,9 +1,16 @@
 Change Log
 ==========
 
+## 0.8.13
+ * Added heartbeat to typing indicators to handle longer typing sessions (APPS-840).
+ * Fixed intermittent NPE in PatchStreamMetadataTaskMaster line 65 (APPS-903, APPS-432).
+ * Removed custom `com.layer.sdk.permission.C2D_MESSAGE` permission from SDK to avoid duplicate
+   permission issues in Android 5.  A package-specific C2D_MESSAGE permission must be defined in
+   your app's manifest, per the getting started guide (APPS-935).
+
 ## 0.8.12
- * Bumped compileSdkVersion to 21 (target and min are still 14)
- * Bumped buildToolsVersion to 21.1.2
+ * Bumped compileSdkVersion to 21 (target and min are still 14).
+ * Bumped buildToolsVersion to 21.1.2.
  * Prioritize sending messages during synchronization.
  * Removed irrelevant deauthentication errors.
  * Removed `No subscribers registered for event class` logs.
@@ -19,34 +26,34 @@ Change Log
  * Fixed intermittent failure to alert change events during sync.
 
 ## 0.8.9
- * Removed temporary object IDs
+ * Removed temporary object IDs.
  * Changed permanent object ID URI format to:
    * layer:///messages/[uuid]
    * layer:///conversations/[uuid]
- * Improved push channel management
+ * Improved push channel management.
  * Added validation for null Conversation in creating and sending Messages, and sending typing indicators.
  * Added validation for empty and oversized participants for Conversations before sending.
  * Added validation for incremental participant additions.
 
 ## 0.8.8
- * Added metadata to conversations
- * Added typing indicators
- * Reduced database memory footprint
- * Prevent concurrent database migration errors (SUPP-133)
- * Improved management of foreground/background state (SUPP-128)
- * Minor efficiency improvements
+ * Added metadata to conversations.
+ * Added typing indicators.
+ * Reduced database memory footprint.
+ * Prevent concurrent database migration errors (SUPP-133).
+ * Improved management of foreground/background state (SUPP-128).
+ * Minor efficiency improvements.
 
 ## 0.8.7
- * LayerClient can be instantiated on a background thread or isolated process
- * Fixed `No schemas in DataSource set` error when instantiating LayerClient on certain devices (SUPP-116)
- * Minor efficiency improvements
+ * LayerClient can be instantiated on a background thread or isolated process.
+ * Fixed `No schemas in DataSource set` error when instantiating LayerClient on certain devices (SUPP-116).
+ * Minor efficiency improvements.
 
 ## 0.8.6
- * Fixed intermittent exception in GcmIntentService line 147 (SUPP-110)
- * Corrected issues with large numeric participant IDs
+ * Fixed intermittent exception in GcmIntentService line 147 (SUPP-110).
+ * Corrected issues with large numeric participant IDs.
 
 ## 0.8.5
- * Corrected getConversationsWithParticipants() bug introduced in 0.8.4
+ * Corrected getConversationsWithParticipants() bug introduced in 0.8.4.
 
 ## 0.8.4
  * Improved connection management.
@@ -54,34 +61,34 @@ Change Log
  * Made looking LayerObjects up by ID case-insensitive.
 
 ## 0.8.3
- * More forgiving connection / authentication state
- * LayerClient connects again if it was connected when the app was killed
+ * More forgiving connection / authentication state.
+ * LayerClient connects again if it was connected when the app was killed.
 
 ## 0.8.2
- * Added DeletionMode to deleteMessage() and deleteConversation()
- * Improved sync performance
- * Improved error message for TaskMaster 3->2 error
- * Fixed marking a message delivered and read after getting re-added to a conversation
- * Fixed intermittent IllegalArgumentException in Persist line 288
- * Fixed nested-cursor memory errors
+ * Added DeletionMode to deleteMessage() and deleteConversation().
+ * Improved sync performance.
+ * Improved error message for TaskMaster 3->2 error.
+ * Fixed marking a message delivered and read after getting re-added to a conversation.
+ * Fixed intermittent IllegalArgumentException in Persist line 288.
+ * Fixed nested-cursor memory errors.
 
 ## 0.8.1
- * Fixed intermittent SQLiteConstraintException
- * Fixed intermittent NPE in Transport line 297
- * Fixed intermittent NPE in Transport line 437
+ * Fixed intermittent SQLiteConstraintException.
+ * Fixed intermittent NPE in Transport line 297.
+ * Fixed intermittent NPE in Transport line 437.
 
 ## 0.8.0
- * Updated endpoints to production
+ * Updated endpoints to production.
 
 ## 0.7.21
  * API actions (sendMessage, deleteConversation, etc.) are asynchronous.  Listen for LayerChangeEvents for completion.
- * Improved synchronization efficiency
- * Added `category` to Layer PUSH broadcast intents to isolate push broadcasts to the current package
- * LayerClient.authenticate() attempts to connect first if not connected
- * LayerClient.getAppId() returns UUID instead of String
- * Improved local storage performance
- * Decreased push overhead
- * Fixed `layer-message-id` in push notification
+ * Improved synchronization efficiency.
+ * Added `category` to Layer PUSH broadcast intents to isolate push broadcasts to the current package.
+ * LayerClient.authenticate() attempts to connect first if not connected.
+ * LayerClient.getAppId() returns UUID instead of String.
+ * Improved local storage performance.
+ * Decreased push overhead.
+ * Fixed `layer-message-id` in push notification.
 
 ## 0.7.20
  * Fixed skipped first push notification after backgrounding.
@@ -115,8 +122,8 @@ Change Log
  * Removed LayerNotificationCallback; added new Intent broadcast with `com.layer.sdk.PUSH` action.
 
 ## 0.7.12
- * LayerClient.markMessageAsRead()
- * Message.getRecipientStatus() map acts like Message.getRecipientStatus(userId)
+ * LayerClient.markMessageAsRead().
+ * Message.getRecipientStatus() map acts like Message.getRecipientStatus(userId).
 
 ## 0.7.11
  * Message.sentAt and Message.receivedAt populated.
