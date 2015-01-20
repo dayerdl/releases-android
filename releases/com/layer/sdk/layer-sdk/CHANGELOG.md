@@ -1,6 +1,9 @@
 Change Log
 ==========
 
+## 0.8.15
+ * Added `ConversationOptions` with the ability to disable delivery receipts.
+
 ## 0.8.14
  * Added `LayerClient.getUnreadMessageCount()` for returning unread message counts for a particular
    conversation or all conversations.
