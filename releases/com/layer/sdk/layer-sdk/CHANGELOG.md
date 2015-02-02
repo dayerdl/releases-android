@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+## 0.8.16
+ * Database manager drops schema before creating it if no valid schema can be found (APPS-904).
+ * Fixed intermittent failure to emit Conversation.lastMessage updates.
+ * Added a lock around database creation/deletion so ensure that state remains consistent when
+   authenticate/deauthenticate are called in quick succession
+ * Mark messages as READ even when delivery receipts are disabled for a conversation.
+
 ## 0.8.15
  * Added `ConversationOptions` with the ability to disable delivery receipts.
 
