@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+## 0.8.17
+ * Fixed "stuck" messages not sending.
+ * Improved authentication state management.
+ * Fixed NPE in LayerClientImpl.isConnecting() (APPS-1021).
+
 ## 0.8.16
  * Database manager drops schema before creating it if no valid schema can be found (APPS-904).
  * Fixed intermittent failure to emit Conversation.lastMessage updates.
