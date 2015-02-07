@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+## 0.9.0
+ * Moved Conversation, Message, and MessagePart constructors to LayerClient.
+ * Moved Conversation, Message, and MessagePart actions from LayerClient to their models.
+ * Deprecated old LayerClient Conversation, Message, and MessagePart actions.
+ * Added Query, Predicate, CompoundPredicate, SortDescriptor, etc (APPS-785).
+ * Added LayerClient.setGcmRegistrationId(String senderId, String registrationId) for registering
+   multiple GCM sender IDs externally.
+
 ## 0.8.18
  * Fixed NPE in SyncRecon line 307.
 
@@ -10,7 +18,8 @@ Change Log
  * Fixed NPE in LayerClientImpl.isConnecting() (APPS-1021).
 
 ## 0.8.16
- * Database manager drops schema before creating it if no valid schema can be found (APPS-904).
+ * Database manager drops schema before re-creating if valid managed schema cannot be found
+   (APPS-904).
  * Fixed intermittent failure to emit Conversation.lastMessage updates.
  * Added a lock around database creation/deletion so ensure that state remains consistent when
    authenticate/deauthenticate are called in quick succession
