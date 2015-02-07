@@ -1,6 +1,9 @@
 Change Log
 ==========
 
+## 0.8.18
+ * Fixed NPE in SyncRecon line 307.
+
 ## 0.8.17
  * Fixed "stuck" messages not sending.
  * Improved authentication state management.
