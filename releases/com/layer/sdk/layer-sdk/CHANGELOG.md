@@ -1,6 +1,22 @@
 Change Log
 ==========
 
+## 0.9.1
+ * Improved session expiration and other authentication recovery scenarios.
+ * Fixed participant count mismatch between devices when removing participants from devices that did
+   not add said participants (APPS-1064).
+
+## 0.9.0
+ * Moved Conversation, Message, and MessagePart constructors to LayerClient.
+ * Moved Conversation, Message, and MessagePart actions from LayerClient to their models.
+ * Deprecated old LayerClient Conversation, Message, and MessagePart actions.
+ * Added Query, Predicate, CompoundPredicate, SortDescriptor, etc (APPS-785).
+ * Added LayerClient.setGcmRegistrationId(String senderId, String registrationId) for registering
+   multiple GCM sender IDs externally.
+
+
+### 0.8
+
 ## 0.8.19
  * Improved session expiration and other authentication recovery scenarios.
  * Fixed participant count mismatch between devices when removing participants from devices that did
@@ -15,7 +31,8 @@ Change Log
  * Fixed NPE in LayerClientImpl.isConnecting() (APPS-1021).
 
 ## 0.8.16
- * Database manager drops schema before creating it if no valid schema can be found (APPS-904).
+ * Database manager drops schema before re-creating if valid managed schema cannot be found
+   (APPS-904).
  * Fixed intermittent failure to emit Conversation.lastMessage updates.
  * Added a lock around database creation/deletion so ensure that state remains consistent when
    authenticate/deauthenticate are called in quick succession
