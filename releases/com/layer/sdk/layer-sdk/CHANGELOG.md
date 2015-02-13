@@ -19,7 +19,7 @@ Change Log
    multiple GCM sender IDs externally.
 
 
-### 0.8
+
 
 ## 0.8.20
  * Challenges are suppressed during deauthentication.
