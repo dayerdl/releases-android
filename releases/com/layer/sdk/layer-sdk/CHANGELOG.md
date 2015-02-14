@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+## 0.9.3
+ * Added blocking policies to LayerClient
+ * Added logging to LayerClient
+
 ## 0.9.2
  * Challenges are suppressed during deauthentication.
  * Corrected migrations to prevent SQLiteParser exceptions.
@@ -19,7 +23,7 @@ Change Log
    multiple GCM sender IDs externally.
 
 
-
+### 0.8
 
 ## 0.8.20
  * Challenges are suppressed during deauthentication.
