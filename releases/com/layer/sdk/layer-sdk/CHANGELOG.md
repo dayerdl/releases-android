@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+## 0.9.4
+ * Fixed retrying conversation metadata attempts that result in UNAUTHORIZED errors. (APPS-1157)
+ * LayerClient sets its foreground/background state at instantiation time based on the current top
+   task in Android SDK < 21, or by process in 21 and above (PLAT-595).  This requires a new
+   permission in APIs below 21:
+      <uses-permission android:name="android.permission.GET_TASKS"/>
+ * Fixed a bug with Blocking policies when the server would incorrectly overwrite local policy list.
+
 ## 0.9.3
  * Added blocking policies to LayerClient
  * Added logging to LayerClient
@@ -21,9 +29,6 @@ Change Log
  * Added Query, Predicate, CompoundPredicate, SortDescriptor, etc (APPS-785).
  * Added LayerClient.setGcmRegistrationId(String senderId, String registrationId) for registering
    multiple GCM sender IDs externally.
-
-
-### 0.8
 
 ## 0.8.20
  * Challenges are suppressed during deauthentication.
