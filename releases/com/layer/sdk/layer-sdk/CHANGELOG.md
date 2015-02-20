@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+## 0.9.5
+ * GET_TASKS permission is optional.  If the permission is available, pre-Lollipop devices use it to
+   determine initial foreground or background state during initialization.  Otherwise, LayerClient
+   assumes it is initialized in the foreground.
+ * Synchronization efficiency improved.
+
 ## 0.9.4
  * Fixed retrying conversation metadata attempts that result in UNAUTHORIZED errors. (APPS-1157)
  * LayerClient sets its foreground/background state at instantiation time based on the current top
@@ -10,8 +16,8 @@ Change Log
  * Fixed a bug with Blocking policies when the server would incorrectly overwrite local policy list.
 
 ## 0.9.3
- * Added blocking policies to LayerClient
- * Added logging to LayerClient
+ * Added blocking policies to LayerClient.
+ * Added logging to LayerClient.
 
 ## 0.9.2
  * Challenges are suppressed during deauthentication.
