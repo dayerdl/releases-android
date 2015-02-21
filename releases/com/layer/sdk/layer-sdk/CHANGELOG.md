@@ -1,6 +1,9 @@
 Change Log
 ==========
 
+## 0.9.6
+ * Fixed metadata `Unknown value type` bug.
+
 ## 0.9.5
  * GET_TASKS permission is optional.  If the permission is available, pre-Lollipop devices use it to
    determine initial foreground or background state during initialization.  Otherwise, LayerClient
