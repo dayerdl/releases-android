@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+## 0.9.7
+ * Fixed metadata `Null URI` bug when processing metadata for deleted conversations.
+ * Metadata keys validated as case insensitive alpha-numeric, dash and underscore.
+
 ## 0.9.6
  * Fixed metadata `Unknown value type` bug.
 
