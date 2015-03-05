@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+## 0.9.8
+ * Message senders set the sent message's `receivedAt` immediately to a local timestamp (APPS-1222).
+ * Block policy synchronization settles with more consistent callbacks.
+ * LayerClient constructor accepts an new optional Options class which takes the place of the
+   GCM sender parameter, and allows for a new option to broadcast PUSH while in the foreground.
+
 ## 0.9.7
  * Fixed metadata `Null URI` bug when processing metadata for deleted conversations.
  * Metadata keys validated as case insensitive alpha-numeric, dash and underscore.
