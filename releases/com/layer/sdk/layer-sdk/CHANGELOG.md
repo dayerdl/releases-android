@@ -1,5 +1,11 @@
-Change Log
-==========
+# Android SDK Change Log
+
+## 0.10.0
+ * Added external content: MessageParts less than or equal to 2KB are treated as before, while those
+   greater than 2KB are uploaded to cloud storage.  LayerProgressListener monitors upload and
+   download progress.  MessagePart status can be monitored with `isContentReady()`, and downloaded
+   with MessagePart.download().  Various disk capacity and auto-download options are available
+   through LayerClient.
 
 ## 0.9.8
  * Message senders set the sent message's `receivedAt` immediately to a local timestamp (APPS-1222).
