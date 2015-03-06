@@ -1,5 +1,8 @@
 # Android SDK Change Log
 
+## 0.10.1
+ * Null check for sending a large message without a LayerProgressListener attached.
+
 ## 0.10.0
  * Added external content: MessageParts less than or equal to 2KB are treated as before, while those
    greater than 2KB are uploaded to cloud storage.  LayerProgressListener monitors upload and
