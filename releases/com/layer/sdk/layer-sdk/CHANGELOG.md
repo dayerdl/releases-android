@@ -1,5 +1,8 @@
 # Android SDK Change Log
 
+## 0.10.2
+ * Fixed "Could not create content directory" exception.
+
 ## 0.10.1
  * Null check for sending a large message without a LayerProgressListener attached.
 
