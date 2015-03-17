@@ -1,5 +1,12 @@
 # Android SDK Change Log
 
+## 0.11.0
+ * Removed Message `index` in favor of more efficient `position`.  Both `index` and `position` can
+   order messages within a conversation, but `index` was an absolute index, while `position` is
+   relative.  To maintain its 0-based, monotonically-increasing nature, `index` required periodic
+   updates, where `position` requires no updates.
+ * Added logged check for GcmIntentService.
+
 ## 0.10.2
  * Fixed "Could not create content directory" exception.
 
