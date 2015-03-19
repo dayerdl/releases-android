@@ -1,5 +1,10 @@
 # Android SDK Change Log
 
+## 0.11.1
+ * Improved synchronization performance
+ * Improved UI performance by de-prioritizing background tasks
+ * Added `RecyclerViewController.getPosition(Tquery queryable)`
+
 ## 0.11.0
  * Removed Message `index` in favor of more efficient `position`.  Both `index` and `position` can
    order messages within a conversation, but `index` was an absolute index, while `position` is
