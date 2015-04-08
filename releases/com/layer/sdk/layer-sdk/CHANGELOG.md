@@ -1,9 +1,20 @@
 # Android SDK Change Log
 
+## 0.11.2
+ * Fixed `column object_identifier is not unique` exception in InboundRecon.
+ * Pre-fetch data during push notifications while in background.
+ * Bumped GCM to `com.google.android.gms:play-services-gcm:7.0.0`.
+ * Fixed an issue that caused PERSISTENCE_CLOSED exception during Recon (APPS-1281).
+ * Updated Logging. Changed SendLogs to include db and removed APIs that controlled log level & info.
+ * Model operations now throw typed LayerExceptions rather than IllegalArgumentExceptions.
+ * Fixed `Push event with no client seq encountered` exception.
+ * Fixed bug with foreign keys that could disable cascade deletion in certain cases. Added a software migration 
+   for existing databases that have extra entries.
+
 ## 0.11.1
- * Improved synchronization performance
- * Improved UI performance by de-prioritizing background tasks
- * Added `RecyclerViewController.getPosition(Tquery queryable)`
+ * Improved synchronization performance.
+ * Improved UI performance by de-prioritizing background tasks.
+ * Added `RecyclerViewController.getPosition(Tquery queryable)`.
 
 ## 0.11.0
  * Removed Message `index` in favor of more efficient `position`.  Both `index` and `position` can
