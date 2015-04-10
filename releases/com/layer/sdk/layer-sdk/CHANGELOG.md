@@ -36,6 +36,13 @@
    with MessagePart.download().  Various disk capacity and auto-download options are available
    through LayerClient.
 
+## 0.9.9
+ * Fixed remote metadata update bug.
+ * Fixed `column object_identifier is not unique` exception in InboundRecon.
+ * Fixed `Push event with no client seq encountered` exception.
+ * Fixed bug with foreign keys that could disable cascade deletion in certain cases. Added a software migration
+   for existing databases that have extra entries.
+
 ## 0.9.8
  * Message senders set the sent message's `receivedAt` immediately to a local timestamp (APPS-1222).
  * Block policy synchronization settles with more consistent callbacks.
