@@ -1,5 +1,11 @@
 # Android SDK Change Log
 
+## 0.11.3 
+ * Fixed remote metadata update bug.
+ * Added LayerChangeEvent for MessagePart changes 
+ * Added querying on MessageParts 
+ * Fixed a bug where MessagePart content would not be deleted from disk on Message deletion
+
 ## 0.11.2
  * Fixed `column object_identifier is not unique` exception in InboundRecon.
  * Pre-fetch data during push notifications while in background.
