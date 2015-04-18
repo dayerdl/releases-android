@@ -1,6 +1,9 @@
 # Android SDK Change Log
 
-## 0.11.3 
+## 0.11.4
+ * Enforcing mime-types to have the format of */* 
+
+## 0.11.3
  * Fixed remote metadata update bug.
  * Added LayerChangeEvent for MessagePart changes 
  * Added querying on MessageParts 
