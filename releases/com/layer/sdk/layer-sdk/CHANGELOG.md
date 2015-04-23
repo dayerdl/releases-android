@@ -1,7 +1,16 @@
 # Android SDK Change Log
 
+## 0.11.5
+ * Allowing users to set LayerClient.Options to set `autoDownloadMimeTypes`, `autoDownloadSizeThreshold`,
+   and `diskCapacity` without being authenticated.
+ * Removed the requirement for `android.permission.READ_PHONE_STATE` 
+ * Generating a random Device ID if the one returned by `Settings.Secure.ANDROID_ID` is NULL. Persisting 
+   this Device ID in SharedPreferences to keep things consistent.
+ * Fixed a bug where `MessagePart.getData()` could return NULL even if the content was marked as ready.
+
 ## 0.11.4
  * Enforcing mime-types to have the format of */* 
+ * Fixed a bug where the getMessageParts() on the last message of a Conversation could return NULL 
 
 ## 0.11.3
  * Fixed remote metadata update bug.
