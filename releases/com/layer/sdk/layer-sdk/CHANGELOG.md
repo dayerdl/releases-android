@@ -1,5 +1,9 @@
 # Android SDK Change Log
 
+## 0.13.0
+ * Added `Actor` class for supporting system messages.
+ * Changed `String Message.getSentByUserId()` to `Actor Message.getSender()`.
+
 ## 0.11.6
  * Fixed a crash when conversations are deleted locally (APPS-1500)
  * Fixed default content settings in LayerClient.Options
