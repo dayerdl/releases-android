@@ -1,5 +1,9 @@
 # Android SDK Change Log
 
+## 0.11.6
+ * Fixed a crash when conversations are deleted locally (APPS-1500)
+ * Fixed default content settings in LayerClient.Options
+
 ## 0.11.5
  * Allowing users to set LayerClient.Options to set `autoDownloadMimeTypes`, `autoDownloadSizeThreshold`,
    and `diskCapacity` without being authenticated.
