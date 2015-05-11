@@ -4,6 +4,16 @@
  * Added `Actor` class for supporting system messages.
  * Changed `String Message.getSentByUserId()` to `Actor Message.getSender()`.
  * NOTE: `Actor` is an undocumented feature to support system messages sent via the Platform API, which is currently in closed beta. Documentation will be updated in the coming weeks. `String Message.getSender().getUserId()` can be used to replace `String Message.getSentByUserId()`.
+ * Instantiating the LayerClient supports taking a String with the App ID directly:
+ ```
+ // Option 1: Create a standard LayerClient object
+ LayerClient layerClient = LayerClient.newInstance(context.getApplicationContext(), "App ID");
+
+ // Option 2: Create a LayerClient object with a GCM Sender ID (allows for push notifications)
+ LayerClient.Options options = new LayerClient.Options();
+ options.googleCloudMessagingSenderId("GCM Project Number");
+ LayerClient layerClient = LayerClient.newInstance(context, "App ID", options);
+ ```
 
 ## 0.11.6
  * Fixed a crash when conversations are deleted locally (APPS-1500)
