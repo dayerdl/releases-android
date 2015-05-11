@@ -7,7 +7,7 @@
  * Instantiating the LayerClient supports taking a String with the App ID directly:
  ```
  // Option 1: Create a standard LayerClient object
- LayerClient layerClient = LayerClient.newInstance(context.getApplicationContext(), "App ID");
+ LayerClient layerClient = LayerClient.newInstance(context, "App ID");
 
  // Option 2: Create a LayerClient object with a GCM Sender ID (allows for push notifications)
  LayerClient.Options options = new LayerClient.Options();
