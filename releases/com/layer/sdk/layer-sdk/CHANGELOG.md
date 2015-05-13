@@ -1,32 +1,38 @@
 # Android SDK Change Log
 
+## 0.13.1
+ * Removed `android.permission.RECEIVE_BOOT_COMPLETED` permission requirement.
+ * Bumped GCM to `com.google.android.gms:play-services-gcm:7.3.0`.
+ * Fixed a bug in Message RecipientStatus.
+ * Enforcing size limit per message part of 2GB, and count limit of 1000 MessageParts per message.
+ * Preventing access to MessagePart data before the message is queued for sending.
+
 ## 0.13.0
  * Added `Actor` class for supporting system messages.
  * Changed `String Message.getSentByUserId()` to `Actor Message.getSender()`.
  * NOTE: `Actor` is an undocumented feature to support system messages sent via the Platform API, which is currently in closed beta. Documentation will be updated in the coming weeks. `String Message.getSender().getUserId()` can be used to replace `String Message.getSentByUserId()`.
- * Instantiating the LayerClient supports taking a String with the App ID directly: `LayerClient layerClient = LayerClient.newInstance(context, "App ID");`
+ * Instantiating the `LayerClient` supports taking a String with the App ID directly: `LayerClient layerClient = LayerClient.newInstance(context, "App ID");`
 
 ## 0.11.6
- * Fixed a crash when conversations are deleted locally (APPS-1500)
- * Fixed default content settings in LayerClient.Options
+ * Fixed a crash when conversations are deleted locally (APPS-1500).
+ * Fixed default content settings in `LayerClient.Options`.
 
 ## 0.11.5
- * Allowing users to set LayerClient.Options to set `autoDownloadMimeTypes`, `autoDownloadSizeThreshold`,
-   and `diskCapacity` without being authenticated.
- * Removed the requirement for `android.permission.READ_PHONE_STATE` 
- * Generating a random Device ID if the one returned by `Settings.Secure.ANDROID_ID` is NULL. Persisting 
-   this Device ID in SharedPreferences to keep things consistent.
- * Fixed a bug where `MessagePart.getData()` could return NULL even if the content was marked as ready.
+ * Set LayerClient.Options for `autoDownloadMimeTypes`, `autoDownloadSizeThreshold`, and
+   `diskCapacity` without being authenticated.
+ * Removed `android.permission.READ_PHONE_STATE` permission requirement.
+ * Fixed `null` device ID.
+ * Fixed `MessagePart.getData()` returning `null`.
 
 ## 0.11.4
- * Enforcing mime-types to have the format of */* 
- * Fixed a bug where the getMessageParts() on the last message of a Conversation could return NULL 
+ * Enforcing mime-types to have the format of `*/*`.
+ * Fixed `getMessageParts()` on `Conversation.getLastMessage()` returning `null`.
 
 ## 0.11.3
  * Fixed remote metadata update bug.
- * Added LayerChangeEvent for MessagePart changes 
- * Added querying on MessageParts 
- * Fixed a bug where MessagePart content would not be deleted from disk on Message deletion
+ * Added LayerChangeEvent for MessagePart changes.
+ * Added querying on MessageParts.
+ * Fixed a bug where MessagePart content would not be deleted from disk on Message deletion.
 
 ## 0.11.2
  * Fixed `column object_identifier is not unique` exception in InboundRecon.
