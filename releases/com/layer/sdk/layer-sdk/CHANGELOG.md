@@ -2,6 +2,7 @@
 
 ## 0.13.2
  * Allow MessagePart data access before sending for MessageParts not constructed with InputStreams.
+ * Removed `allowBackup` reference from `AndroidManifest.xml`
 
 ## 0.13.1
  * Removed `android.permission.RECEIVE_BOOT_COMPLETED` permission requirement.
