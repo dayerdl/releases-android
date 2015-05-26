@@ -1,5 +1,9 @@
 # Android SDK Change Log
 
+## 0.13.3
+ * Removed requirement for registering the `<receiver android:name="com.layer.sdk.services.LayerReceiver">` in `AndroidManifest.xml`.
+ * Added static `LayerClient.applicationCreated(Application)` method.  Call this method from your `Application.onCreate()` to improve foreground/background state recognition.
+
 ## 0.13.2
  * Allow MessagePart data access before sending for MessageParts not constructed with InputStreams.
  * Removed `allowBackup` reference from `AndroidManifest.xml`
