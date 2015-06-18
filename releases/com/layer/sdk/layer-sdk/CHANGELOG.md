@@ -1,8 +1,22 @@
 # Android SDK Change Log
 
+## 0.14.0
+ * Added `Announcement` (extends `Message`) for user-specific announcements.  Event listeners now
+   include LayerObject.Type.Announcement, and Queries work for `Announcement.class`.
+ * Added support for `Distinct` conversations. New `Conversation` objects will be distinct by
+   default.  Adding / removing participants will turn off distinct for the specific `Conversation`.
+ * Removed Message.setMetadata().
+ * Added MessageOptions as an optional parameter to LayerClient.newMessage(), with methods for
+   setting push message and sound.
+ * Bumped GCM to `com.google.android.gms:play-services-gcm:7.5.0`.
+ * Removed log4j dependency (with `slf4j-nop`)
+ * Fixed IndexOutOfBounds exception in Byte.valueOf() on certain devices
+
 ## 0.13.3
- * Removed requirement for registering the `<receiver android:name="com.layer.sdk.services.LayerReceiver">` in `AndroidManifest.xml`.
- * Added static `LayerClient.applicationCreated(Application)` method.  Call this method from your `Application.onCreate()` to improve foreground/background state recognition.
+ * Removed requirement for registering the
+   `<receiver android:name="com.layer.sdk.services.LayerReceiver">` in `AndroidManifest.xml`.
+ * Added static `LayerClient.applicationCreated(Application)` method.  Call this method from your
+   `Application.onCreate()` to improve foreground/background state recognition.
 
 ## 0.13.2
  * Allow MessagePart data access before sending for MessageParts not constructed with InputStreams.
@@ -18,8 +32,11 @@
 ## 0.13.0
  * Added `Actor` class for supporting system messages.
  * Changed `String Message.getSentByUserId()` to `Actor Message.getSender()`.
- * NOTE: `Actor` is an undocumented feature to support system messages sent via the Platform API, which is currently in closed beta. Documentation will be updated in the coming weeks. `String Message.getSender().getUserId()` can be used to replace `String Message.getSentByUserId()`.
- * Instantiating the `LayerClient` supports taking a String with the App ID directly: `LayerClient layerClient = LayerClient.newInstance(context, "App ID");`
+ * NOTE: `Actor` is an undocumented feature to support system messages sent via the Platform API,
+   which is currently in closed beta. Documentation will be updated in the coming weeks. `String
+   Message.getSender().getUserId()` can be used to replace `String Message.getSentByUserId()`.
+ * Instantiating the `LayerClient` supports taking a String with the App ID directly:
+   `LayerClient layerClient = LayerClient.newInstance(context, "App ID");`
 
 ## 0.11.6
  * Fixed a crash when conversations are deleted locally (APPS-1500).
@@ -47,11 +64,12 @@
  * Pre-fetch data during push notifications while in background.
  * Bumped GCM to `com.google.android.gms:play-services-gcm:7.0.0`.
  * Fixed an issue that caused PERSISTENCE_CLOSED exception during Recon (APPS-1281).
- * Updated Logging. Changed SendLogs to include db and removed APIs that controlled log level & info.
+ * Updated Logging. Changed SendLogs to include db and removed APIs that controlled log level and
+   info.
  * Model operations now throw typed LayerExceptions rather than IllegalArgumentExceptions.
  * Fixed `Push event with no client seq encountered` exception.
- * Fixed bug with foreign keys that could disable cascade deletion in certain cases. Added a software migration
-   for existing databases that have extra entries.
+ * Fixed bug with foreign keys that could disable cascade deletion in certain cases. Added a
+   software migration for existing databases that have extra entries.
 
 ## 0.11.1
  * Improved synchronization performance.
@@ -82,8 +100,8 @@
  * Fixed remote metadata update bug.
  * Fixed `column object_identifier is not unique` exception in InboundRecon.
  * Fixed `Push event with no client seq encountered` exception.
- * Fixed bug with foreign keys that could disable cascade deletion in certain cases. Added a software migration
-   for existing databases that have extra entries.
+ * Fixed bug with foreign keys that could disable cascade deletion in certain cases. Added a
+   software migration for existing databases that have extra entries.
 
 ## 0.9.8
  * Message senders set the sent message's `receivedAt` immediately to a local timestamp (APPS-1222).
@@ -185,7 +203,8 @@
 
 ## 0.8.10
  * Improved LayerClient initialization time.
- * Deauthenticating no longer clears local cache.  Unique app IDs and user IDs create persistent caches.
+ * Deauthenticating no longer clears local cache.  Unique app IDs and user IDs create persistent
+   caches.
  * Added check for downgrading database schema (and clearing contents).
  * Fixed intermittent failure to alert change events during sync.
 
@@ -195,7 +214,8 @@
    * layer:///messages/[uuid]
    * layer:///conversations/[uuid]
  * Improved push channel management.
- * Added validation for null Conversation in creating and sending Messages, and sending typing indicators.
+ * Added validation for null Conversation in creating and sending Messages, and sending typing
+   indicators.
  * Added validation for empty and oversized participants for Conversations before sending.
  * Added validation for incremental participant additions.
 
@@ -209,7 +229,8 @@
 
 ## 0.8.7
  * LayerClient can be instantiated on a background thread or isolated process.
- * Fixed `No schemas in DataSource set` error when instantiating LayerClient on certain devices (SUPP-116).
+ * Fixed `No schemas in DataSource set` error when instantiating LayerClient on certain devices
+   (SUPP-116).
  * Minor efficiency improvements.
 
 ## 0.8.6
@@ -245,9 +266,11 @@
  * Updated endpoints to production.
 
 ## 0.7.21
- * API actions (sendMessage, deleteConversation, etc.) are asynchronous.  Listen for LayerChangeEvents for completion.
+ * API actions (sendMessage, deleteConversation, etc.) are asynchronous.  Listen for
+   LayerChangeEvents for completion.
  * Improved synchronization efficiency.
- * Added `category` to Layer PUSH broadcast intents to isolate push broadcasts to the current package.
+ * Added `category` to Layer PUSH broadcast intents to isolate push broadcasts to the current
+   package.
  * LayerClient.authenticate() attempts to connect first if not connected.
  * LayerClient.getAppId() returns UUID instead of String.
  * Improved local storage performance.
@@ -262,14 +285,16 @@
  * Fixed intermittent crash when synchronizing with poor connectivity.
 
 ## 0.7.18
- * Close Layer push channel (not GCM push) after a few seconds of being in the background; resume in foreground.
+ * Close Layer push channel (not GCM push) after a few seconds of being in the background; resume
+   in foreground.
 
 ## 0.7.17
  * Fixed re-adding participant to conversation not alerting participant changes.
 
 ## 0.7.16
  * Created LayerException in place of error alerts with `int code, String message`.
- * LayerSyncListener has onSyncError for reporting LayerExceptions encountered during synchronization.
+ * LayerSyncListener has onSyncError for reporting LayerExceptions encountered during
+   synchronization.
  * Corrected Conversation `lastMessage` bug.
  * Corrected alerting 'SESSION_NOT_FOUND' as an authentication error.
 
