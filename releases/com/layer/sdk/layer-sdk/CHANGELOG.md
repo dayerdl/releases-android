@@ -1,16 +1,20 @@
 # Android SDK Change Log
 
 ## 0.14.0
+
+#### Enhancements
  * Added `Announcement` (extends `Message`) for user-specific announcements.  Event listeners now
    include LayerObject.Type.Announcement, and Queries work for `Announcement.class`.
  * Added support for `Distinct` conversations. New `Conversation` objects will be distinct by
    default.  Adding / removing participants will turn off distinct for the specific `Conversation`.
- * Removed Message.setMetadata().
  * Added MessageOptions as an optional parameter to LayerClient.newMessage(), with methods for
    setting push message and sound.
  * Bumped GCM to `com.google.android.gms:play-services-gcm:7.5.0`.
  * Removed log4j dependency (with `slf4j-nop`)
  * Fixed IndexOutOfBounds exception in Byte.valueOf() on certain devices
+
+#### Upgrading
+ * Removed Message.setMetadata(). Use MessageOptions to define push parameters. You can learn more [here](https://developer.layer.com/docs/android/guides#push-integration). 
 
 ## 0.13.3
  * Removed requirement for registering the
