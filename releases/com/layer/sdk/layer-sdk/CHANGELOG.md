@@ -1,20 +1,51 @@
 # Android SDK Change Log
 
-## 0.14.0
+## 0.15.0
 
-#### Enhancements
+### Features
+ * App ID format changed from UUID string to Uri string, in the forms:
+    * `layer:///apps/staging/{UUID}`
+    * `layer:///apps/production/{UUID}`
+ * Added per-user custom push notifications to `MessageOptions` (APPS-1708).
+ * Removed deprecated methods.
+ * Added Message.getOptions(), and `MessageOptions` can be modified prior to sending (APPS-1840).
+ * Added queryable Conversation `LAST_MESSAGE_SENT_AT` property (APPS-1553).
+ * Changed Layer SDK log format to have a single `LayerSDK` tag (APPS-1756).
+ * Created type-safe `Metadata`, added Conversation.putMetadata(Metadata, boolean), and deprecated
+   Conversation.putMetadata(Map, boolean) (APPS-1810).
+ * Removed timer-based polling.
+ * Added LayerObjectExceptionListener and LayerClient.registerObjectExceptionListener() for handling
+   exceptions with Conversation, Message, and MessagePart objects during background operations.  If
+   no listeners are registered, such exceptions are thrown as before.  If a listener is registered,
+   the exceptions are not thrown, and are passed to the listeners, where the object that caused the
+   exception can be retrieved with LayerObjectException.getLayerObject().
+ * All listeners have optional WeakReference sub-interfaces (for example,
+   `LayerChangeEventListener.MainThread.WeakReference`) which the LayerClient registers as weak
+   references.  These listeners get garbage collected - without explicitly unregistering from the
+   LayerClient - when stronger external references to them drop out (APPS-1800).
+
+### Bug Fixes
+ * Fixed `SQLiteConstraintException: columns stream_database_identifier, seq are not unique`
+   (APPS-1647).
+ * Fixed setting message positions on conversations with no messages yet synchronized (APPS-1803).
+ * Announcement recipient map contains the authenticated user (APPS-1792).
+ * Announcement push Intents contain `layer-message-id` (APPS-1819).
+ * Removing a Metadata key results in synchronization (APPS-806). 
+ * Fixed NPE in Transport.java:492 when deleting Conversations.
+ * Fixed NPE in Helper.java:122 when deleting Conversations.
+ * Fixed NPE in OutboundRecon.java:590 when deleting Messages.
+ 
+## 0.14.0
  * Added `Announcement` (extends `Message`) for user-specific announcements.  Event listeners now
    include LayerObject.Type.Announcement, and Queries work for `Announcement.class`.
  * Added support for `Distinct` conversations. New `Conversation` objects will be distinct by
    default.  Adding / removing participants will turn off distinct for the specific `Conversation`.
+ * Removed Message.setMetadata().
  * Added MessageOptions as an optional parameter to LayerClient.newMessage(), with methods for
    setting push message and sound.
  * Bumped GCM to `com.google.android.gms:play-services-gcm:7.5.0`.
  * Removed log4j dependency (with `slf4j-nop`)
  * Fixed IndexOutOfBounds exception in Byte.valueOf() on certain devices
-
-#### Upgrading
- * Removed Message.setMetadata(). Use MessageOptions to define push parameters. You can learn more [here](https://developer.layer.com/docs/android/guides#push-integration). 
 
 ## 0.13.3
  * Removed requirement for registering the
