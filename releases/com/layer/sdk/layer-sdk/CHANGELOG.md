@@ -1,5 +1,9 @@
 # Android SDK Change Log
 
+## 0.15.1
+ * Fixed "stuck" clients due to pre-0.15.0 race condition.
+ * Logging respects e.g. `adb shell setprop log.tag.LayerSDK VERBOSE` again.
+
 ## 0.15.0
 
 ### Features
