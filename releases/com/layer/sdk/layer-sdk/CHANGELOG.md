@@ -1,5 +1,21 @@
 # Android SDK Change Log
 
+## 0.15.2 pre 1
+
+### Features
+ * Added `close()` and `isClosed()` to LayerClient.  These are used to release resources when the
+   client is no longer needed.
+ * Renamed all `WeakReference` listener interfaces to `Weak`.
+
+### Bug Fixes
+ * Corrected LayerChangeEventListener.BackgroundThread.Weak not being on a background thread.
+ * Fixed various database exceptions when resuming (APPS-1822, APPS-1878).
+ * Fixed `Cannot process a receipt for EventType` exception (APPS-1931).
+ * Fixed NPE in Transport.java line 398 (APPS-1867).
+ * Fixed `IllegalStateException` race condition when creating distinct conversations.
+ * Do not start synchronizing when deauthenticating and a network connection connects (APPS-1941).
+ * Do not throw exception when unregistering a LayerProgressListener and no session exists.
+
 ## 0.15.1
  * Fixed "stuck" clients due to pre-0.15.0 race condition.
  * Logging respects e.g. `adb shell setprop log.tag.LayerSDK VERBOSE` again.
