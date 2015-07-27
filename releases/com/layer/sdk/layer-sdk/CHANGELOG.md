@@ -1,6 +1,6 @@
 # Android SDK Change Log
 
-## 0.15.2 pre 1
+## 0.15.2
 
 ### Features
  * Added `close()` and `isClosed()` to LayerClient.  These are used to release resources when the
