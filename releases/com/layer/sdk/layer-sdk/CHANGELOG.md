@@ -1,5 +1,22 @@
 # Android SDK Change Log
 
+## 0.16.0
+
+### Features
+ * Added `ListViewController` designed to drive a `ListView` `Adapter` based on a `Query`.  This is
+   in addition to the existing `RecyclerViewController`.
+ * `LayerClient.newRecyclerViewController()` takes a `RecyclerViewController.Callback` instead of a
+   `QueryController.Callback`.
+ 
+### Bug Fixes
+ * Fixed `MessagePart.getMessage()` returning `null`.
+ * Fixed `MessagePart.download()` NPE.
+ * Fixed memory leak with `LayerReceiver`.
+ * Fixed memory leak with `ConnectionManager`.
+ * Fixed `Changeable cannot be null` exception at ChangeableTransaction.java:64 (APPS-1883).
+ * Fixed `Foreground changeable cannot be null` exception at ChangeableCacheReconciler.java:167 (APPS-1946).
+ * Fixed NPE at ChangeableCacheReconciler.java:85 (APPS-1884). 
+ 
 ## 0.15.2
 
 ### Features
