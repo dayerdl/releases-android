@@ -22,8 +22,8 @@ The recommended path for installation on Android is via [Maven](http://maven.apa
 apply plugin: 'maven'
 
 dependencies {
-    compile 'com.layer.sdk:layer-sdk:0.7.10+'
-    compile 'org.slf4j:slf4j-api:1.7.7+'
+    compile 'com.layer.sdk:layer-sdk:0.16.1'
+    compile 'org.slf4j:slf4j-nop:1.5.8'
 }
 ```
 
@@ -42,10 +42,8 @@ apply plugin: 'maven'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:20.+'
-    compile 'com.android.support:support-annotations:20.+'
-    compile 'com.google.android.gms:play-services:5.+'
-    compile 'org.slf4j:slf4j-api:1.7.7'
+    compile 'com.google.android.gms:play-services-gcm:7.8.0'
+    compile 'org.slf4j:slf4j-nop:1.5.8'
 }
 ```
 Once you have successfully built your project, proceed to the [Verifying SDK Configuration](#verifying-sdk-configuration) section below.
@@ -56,8 +54,8 @@ Once you have finished installing the Layer SDK, you can test your configuration
 
 ```java
 // Instatiates a LayerClient object
-UUID appID = UUID.fromString("INSERT-UUID-HERE")
-LayerClient client = LayerClient.newInstance(this, appID, "GCM ID");
+LayerClient.Options options = new LayerClient.Options().googleCloudMessagingSenderId("INSERT-GCM-SENDER-ID-HERE");
+LayerClient client = LayerClient.newInstance(this, "INSERT-APP-ID-HERE", options);
 
 // Asks the LayerSDK to establish a network connection with the Layer service
 client.connect();
