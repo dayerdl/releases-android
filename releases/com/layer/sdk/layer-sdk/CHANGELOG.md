@@ -1,5 +1,19 @@
 # Android SDK Change Log
 
+## 0.16.1
+
+### Features
+ * Added `proguard.txt` to AAR (APPS-1828).
+ * Lowered thread priority of background operations (APPS-1962).
+ * ListView and RecyclerView controllers allow Queries to change after construction (APPS-1982).
+ * ListView and RecyclerView controllers have `getPosition(item, lastPosition)` for efficiency.
+ * Bumped GCM to `com.google.android.gms:play-services-gcm:7.8.0`.
+
+### Bug Fixes
+ * Synchronize in response to remote Conversation Metadata changes (APPS-1977).
+ * Allow external content less than 2k (APPS-1976).
+ * Better transport channel management.
+
 ## 0.16.0
 
 ### Features
