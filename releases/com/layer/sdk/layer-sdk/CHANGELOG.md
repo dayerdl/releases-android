@@ -17,7 +17,7 @@
      * Added `getTotalMessageCount()` and `getTotalUnreadMessageCount()` to `Conversation`.
      * `Conversation` raises change events for new `totalMessageCount`, `totalUnreadMessageCount`,
        and `historicSyncStatus` attributes.
-     * More details at: https://developer.layer.com/docs/android/integration#partial-synchronization
+     * More details at: https://developer.layer.com/docs/android/integration#historic-synchronization
 
 ### Bug Fixes
   * Fixed an issue that caused delay in creating LayerClient after a push notification.
