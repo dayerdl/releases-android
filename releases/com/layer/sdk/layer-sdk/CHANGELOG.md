@@ -1,20 +1,28 @@
 # Android SDK Change Log
+
 ## 0.17.0
 
 ### Features
- * PARTIAL SYNCHRONIZATION
-     * Added support for Partial Synchronization. With this LayerClient only syncs messages from the earliest unread message for each conversation.
-     * If all messages are read, only the latest message will be fetched from server by default.
-     * For past behavior, explicitly request fetching all messages by specifying `LayerClient.Options.FETCH_ALL_MESSAGES`.
-     * Conversation object has been updated to add support for `Historic Message`, which represents all messages from the past when a client authenticates.
-     * Updated `LayerSyncListener` to raise `onBeforeSync` and `onAfterSync` only for the sync operation when a client fetches data from server for first time, i.e., `cold sync`
-     * Added `onProgress` to `LayerSyncListener` which provides a progress status for `cold sync` with a range `[0, 100]`
-     * More details at : https://developer.layer.com/docs/android/integration#partial-synchronization
+ * Historic synchronization
+     * The LayerClient defaults to only synchronizing in each Conversation's Message history from
+       the earliest unread message to present.
+     * Other synchronization policies are available via LayerClient.Options.historicSyncPolicy().
+     * For past behavior, where all history is synchronized, use `HistoricSyncPolicy.ALL_MESSAGES`.
+     * Added methods to `Conversation` for synchronizing down more message history.
+     * Updated `LayerSyncListener` to raise `onBeforeSync` and `onAfterSync` only for the sync
+       operation when a client fetches data from server for first time after authentication (e.g.
+       fetching history).
+     * Added `onSyncProgress` to `LayerSyncListener` which provides a historic synchronization
+       progress.
+     * Added `getTotalMessageCount()` and `getTotalUnreadMessageCount()` to `Conversation`.
+     * `Conversation` raises change events for new `totalMessageCount`, `totalUnreadMessageCount`,
+       and `historicSyncStatus` attributes.
+     * More details at: https://developer.layer.com/docs/android/integration#partial-synchronization
 
 ### Bug Fixes
   * Fixed an issue that caused delay in creating LayerClient after a push notification.
   * Fixed an issue with cursor for SQLite during migration (APPS-2016).
-  * Fixed an issue with `null` metadata, that caused sync to fail.
+  * Fixed an issue with `null` metadata that caused sync to fail.
 
 ## 0.16.1
 
