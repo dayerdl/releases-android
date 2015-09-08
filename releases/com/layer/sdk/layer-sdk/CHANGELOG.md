@@ -5,20 +5,16 @@
  * PARTIAL SYNCHRONIZATION
      * Added support for Partial Synchronization. With this LayerClient only syncs messages from the earliest unread message for each conversation.
      * If all messages are read, only the latest message will be fetched from server by default.
-     * Explicitly request fetching all messages by specifying `LayerClient.Options.FETCH_ALL_MESSAGES` to fetch all messages.
+     * For past behavior, explicitly request fetching all messages by specifying `LayerClient.Options.FETCH_ALL_MESSAGES`.
      * Conversation object has been updated to add support for `Historic Message`, which represents all messages from the past when a client authenticates.
      * Updated `LayerSyncListener` to raise `onBeforeSync` and `onAfterSync` only for the sync operation when a client fetches data from server for first time, i.e., `cold sync`
      * Added `onProgress` to `LayerSyncListener` which provides a progress status for `cold sync` with a range `[0, 100]`
+     * More details at : https://developer.layer.com/docs/android/integration#partial-synchronization
 
 ### Bug Fixes
   * Fixed an issue that caused delay in creating LayerClient after a push notification.
   * Fixed an issue with cursor for SQLite during migration (APPS-2016).
   * Fixed an issue with `null` metadata, that caused sync to fail.
-
-## 0.16.2 pre 1
-
-### Bug Fixes
- * Corrected unclosed database migration cursor and close migration JAR resources (APPS-2016).
 
 ## 0.16.1
 
