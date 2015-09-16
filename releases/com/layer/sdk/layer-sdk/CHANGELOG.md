@@ -1,5 +1,12 @@
 # Android SDK Change Log
 
+## 0.17.1
+
+### Bug Fixes
+  * Fixed an issue where Metadata was not updated after first sync.
+  * Fixed an issue where `Conversation.syncMoreData(...)` results in some messages missing
+  * Fixed a `LayerObjectException` that could happen when invoking API's when `LayerClient` is `deauthenticated`
+
 ## 0.17.0
 
 ### Features
