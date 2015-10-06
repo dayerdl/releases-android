@@ -1,11 +1,31 @@
 # Android SDK Change Log
 
+## 0.18.0
+
+### Features
+ * Improved `RecyclerViewController` and `ListViewController` scrolling performance.
+   * Added `updateBoundPosition(int position)` to RecyclerViewController and ListViewController.
+     When called from ListView and RecyclerView View-binding methods, this method pre-caches
+     surrounding LayerObjects (the Conversations, Messages, and MessageParts associated with the
+     controller's Query) into the LayerClient cache from a background thread.  LayerObjects are then
+     readily available from the LayerClient cache when scrolling into view.
+   * Added optional `PreProcessCallback` to RecyclerViewController and ListViewController, called on
+     a background thread, for parsing and caching content (e.g. MessagePart data and Metadata) prior
+     to binding.  This callback works in conjunction with `updateBoundPosition(int position)` to
+     allow long-running content parsing to take place off the UI thread.
+ * Updates to `LayerSyncListener` notifications
+   * Introduced `SyncType`. With this change `LayerSyncListener` notifications are raised for all sync operations.
+
+### Bug Fixes
+  * Fixed ConcurrentModificationException in PolicyManager line 61 (APPS-2114).
+
 ## 0.17.1
 
 ### Bug Fixes
   * Fixed an issue where Metadata was not updated after first sync.
-  * Fixed an issue where `Conversation.syncMoreData(...)` results in some messages missing
-  * Fixed a `LayerObjectException` that could happen when invoking API's when `LayerClient` is `deauthenticated`
+  * Fixed an issue where `Conversation.syncMoreData(...)` results in some messages missing.
+  * Fixed a `LayerObjectException` that could happen when invoking API's when `LayerClient` is `deauthenticated`.
+  * Fixed an issue with `Conversation.getHistoricSyncStatus()`. New `Conversation`s start with `INVALID`.
 
 ## 0.17.0
 
