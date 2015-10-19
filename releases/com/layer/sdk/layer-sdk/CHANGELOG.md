@@ -1,5 +1,17 @@
 # Android SDK Change Log
 
+## 0.18.1
+
+### Features
+ * Improved performance for sync operations by reducing memory and time consumed.
+
+### Bug Fixes
+ * Fixed divide-by-zero in GetEventsTask. (APPS-2130)
+ * Fixed locally-generated Conversation totalMessageCount and totalUnreadMessageCount change events
+   in response to marking messages read, deleting messages, and sending messages. (APPS-2133)
+ * Fixed multi-deletion exceptions in Message and Conversation. (APPS-2138)
+ * Added handling for `null` intent in `WakefulBroadcastReceiver`. (APPS-2124)
+
 ## 0.18.0
 
 ### Features
