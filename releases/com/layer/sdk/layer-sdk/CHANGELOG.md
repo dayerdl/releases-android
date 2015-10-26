@@ -1,5 +1,15 @@
 # Android SDK Change Log
 
+## 0.18.2
+
+### Features
+ * Added `PARTICIPANT_COUNT` as a queryable property on Conversation (APPS-2159).
+
+### Bug Fixes
+ * Fixed `SQLiteDatabaseLockedException` in `DBPool` line 131 (APPS-2043).
+ * Fixed `ArithmeticException` exception in `GetEventsTask.java` line 647 (APPS-2157).
+ * Improved logging around database migration failures (APPS-2145).
+
 ## 0.18.1
 
 ### Features
