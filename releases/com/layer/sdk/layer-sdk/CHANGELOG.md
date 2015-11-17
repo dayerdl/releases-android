@@ -1,5 +1,25 @@
 # Android SDK Change Log
 
+## 0.19.0
+
+### Features
+ * All listeners have BackgroundThread versions for receiving callbacks on a background thread
+   (APPS-2165).
+ * LayerChangeEventListener.MainThread is removed; LayerChangeEventListener handles main thread
+   callbacks.
+ * LayerChangeEventListener signature changed from onEventAsync / onEventMainThread to
+   onChangeEvent.
+ * Background external content exceptions now reported through `LayerObjectExceptionListener`
+   (APPS-1956).
+ * Changed `LayerClient.enableLogging()` and `LayerClient.disableLogging()` to single
+   `LayerClient.setLoggingEnabled()` setter and added `LayerClient.isLoggingEnabled()` for returning
+   the current Layer SDK programmatic logging state.
+ * Added `LayerClient.getVersion()` for returning the Layer SDK's version name.
+
+### Bug Fixes
+ * Fixed `FAILED_API_ACTION (9003) - LayerObject cannot be null` (APPS-2169).
+
+
 ## 0.18.2
 
 ### Features
