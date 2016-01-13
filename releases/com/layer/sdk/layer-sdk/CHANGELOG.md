@@ -1,5 +1,18 @@
 # Android SDK Change Log
 
+## 0.19.1
+
+### Features
+ * Reduced bandwidth usage during sync operations.
+
+### Bug Fixes
+ * Fixed `NullPointerException` in `AppStateMonitor` (APPS-2200).
+ * Fixed `Invalid migration name` in `Migration` (APPS-2205).
+ * Fixed stack overflow exception in database corruption handler (APPS-2207).
+ * Fixed authentication challenge loop in poor network conditions (APPS-1964).
+ * Fixed `event_not_found` error when synchronizing clients with a distinct conversation containing
+   only themselves (APPS-2259).
+
 ## 0.19.0
 
 ### Features
