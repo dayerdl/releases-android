@@ -1,5 +1,16 @@
 # Android SDK Change Log
 
+## 0.19.2
+
+### Features
+ * Added verbose logging to TLS negotiation (APPS-2240).
+ * Bumped GCM to `com.google.android.gms:play-services-gcm:8.4.0`.
+
+### Bug Fixes
+ * Fixed  `NullPointerException` in SyncRecon line 348 (APPS-2267).
+ * Added `null` checks to `LayerClient.getConversationsWithParticipants()` (APPS-2268).
+ * Fixed `NOT_AUTHENTICATED` exception in GcmIntentService (APPS-2282)
+
 ## 0.19.1
 
 ### Features
