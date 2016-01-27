@@ -1,5 +1,15 @@
 # Android SDK Change Log
 
+## 0.19.3
+
+### Features
+ * Added `android:maxSdkVersion="15"` to `android.permission.GET_ACCOUNTS`.  `GET_ACCOUNTS` is not
+   required by Google Cloud Messaging for API 16+.
+
+### Bug Fixes
+ * Fixed inability to recover runtime authentication challenges (e.g. `SESSION_NOT_FOUND`)
+   introduced in `0.19.2` (APPS-2287).
+
 ## 0.19.2
 
 ### Features
