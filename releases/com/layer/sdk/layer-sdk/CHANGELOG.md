@@ -1,5 +1,19 @@
 # Android SDK Change Log
 
+## 0.19.4
+
+### Features
+ * Android M: Changed `targetSdkVersion` and `compileSdkVersion` to 23, and removed `org.apache`
+   dependency (APPS-2263).
+
+### Bug Fixes
+ * Corrected LayerClient configuration check with `android.permission.GET_ACCOUNTS` (APPS-2288).
+ * Corrected from `android:maxSdkVersion="15"` to `android:maxSdkVersion="18"` since `maxSdkVersion`
+   was introduced in Android API 19.
+
+ ## Bug Fixes
+ * Fixed an issue where Historic sync was stuck. (APPS-2295)
+
 ## 0.19.3
 
 ### Features
