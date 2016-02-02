@@ -1,5 +1,14 @@
 # Android SDK Change Log
 
+## 0.19.5
+
+### Features
+
+### Bug Fixes
+ * Funnel `SyncMaster` exceptions through `LayerSyncListener.onSyncError()` (APPS-2298).
+ * Clear listeners later when disposing `LayerClient` so `LayerObjectExceptionListeners` can handle
+   errors while disposing (APPS-2298).
+
 ## 0.19.4
 
 ### Features
@@ -10,6 +19,8 @@
  * Corrected LayerClient configuration check with `android.permission.GET_ACCOUNTS` (APPS-2288).
  * Corrected from `android:maxSdkVersion="15"` to `android:maxSdkVersion="18"` since `maxSdkVersion`
    was introduced in Android API 19.
+
+ ## Bug Fixes
  * Fixed an issue where Historic sync was stuck. (APPS-2295)
 
 ## 0.19.3
