@@ -1,5 +1,18 @@
 # Android SDK Change Log
 
+## 0.20.0
+
+### Features
+ * Added `DeletionMode.ALL_MY_DEVICES`, which replaces `DeletionMode.LOCAL`.  `ALL_MY_DEVICES` is a
+   synchronized deletion of conversations and messages for the authenticated user.  This deletion
+   mode will delete content across a user's devices and between logins.  When the user receives a
+   new message for a conversation they applied `ALL_MY_DEVICES` to, the conversation resurrects from
+   that message forward until deleted again.
+
+### Bug Fixes
+ * Infinite sync loop from pushed content from deleted conversation (APPS-2332).
+ * Fixed `IllegalArgumentException` "Stream with no client_id set" (APPS-2327).
+
 ## 0.19.5
 
 ### Features
