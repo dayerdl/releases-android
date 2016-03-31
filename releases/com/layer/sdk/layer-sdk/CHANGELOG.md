@@ -1,5 +1,11 @@
 # Android SDK Change Log
 
+## 0.20.1
+
+### Bug Fixes
+ * Fixed exception spam in logs caused by connection issues (APPS-2362)
+ * Fixed Stream has no database identifier excpetion (APPS-2366)
+
 ## 0.20.0
 
 ### Features
