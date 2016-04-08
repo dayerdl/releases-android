@@ -1,10 +1,18 @@
 # Android SDK Change Log
 
+# 0.20.2
+
+### Bug Fixes
+ * Fixed exception "column stream_id is not unique while persisting conversations" (APPS-2369).
+ * Ensured distinct conversation check always includes the currently authenticated user (APPS-2373).
+ * Fixed `IllegalArgumentException` exception "cannot delete a deleted changeable" (APPS-2379).
+
+
 ## 0.20.1
 
 ### Bug Fixes
  * Fixed exception spam in logs caused by connection issues (APPS-2362)
- * Fixed Stream has no database identifier excpetion (APPS-2366)
+ * Fixed Stream has no database identifier exception (APPS-2366)
 
 ## 0.20.0
 
