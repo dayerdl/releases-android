@@ -1,5 +1,11 @@
 # Android SDK Change Log
 
+# 0.20.3
+
+### Bug Fixes
+ * Fixed an issue where conversations were deleted in local device due to transport errors (APPS-2389)
+ * Fixed `LayerException: STREAM_DELETED` from being logged when stream is already deleted (APPS-2394)
+
 # 0.20.2
 
 ### Bug Fixes
