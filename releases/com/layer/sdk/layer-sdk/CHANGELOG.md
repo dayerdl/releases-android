@@ -1,5 +1,17 @@
 # Android SDK Change Log
 
+# 0.20.4
+
+### Features
+  * Added `deauthenticate(DeauthenticationAction)`, that allows keeping user's local data for
+    resuming when they authenticate again.
+
+### Bug Fixes
+  * Fixed an issue with deleting conversation for `ALL_MY_DEVICES` (APPS-2404).
+  * Changed `Conversation.syncAllMessages()` / `Conversation.syncFromEarliestUnreadMessage()` /
+    `Conversation.syncMoreHistoricMessages()` to be ignored for new `Conversations`.
+
+
 # 0.20.3
 
 ### Bug Fixes
