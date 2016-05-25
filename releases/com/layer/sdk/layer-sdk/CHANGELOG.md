@@ -1,5 +1,28 @@
 # Android SDK Change Log
 
+# 0.21.0
+
+### Features
+  * Added support for advanced customization of push notification messages. Push notification
+    options are now added by creating `PushNotificationPayload` objects and setting them through the
+    appropriate `MessageOptions` methods. `PushNotificationPayload.fromGcmIntentExtras()` helps to
+    avoid querying the GCM intent extras directly when receiving a push notification and allows
+    working with a POJO instead. This is a breaking change and existing `MessageOptions` calls
+    and push notification receivers will need to be updated.
+  * Added `LayerClient.waitForContent` which waits for a particular Layer object to be synced to device.
+  * Change `Message`'s `receivedAt` time. Sets `receivedAt` to reflect the time the message
+    was received by this user (instead of the time it was received by the particular device). In
+    case of messages sent from a device, it will have the time at which message was sent by user
+    i.e., current behavior. (APPS-2405)
+  * Added support for querying by conversation metadata.
+  * Removed deprecated api `LayerClient.getUnreadMessageCount`. Use either `executeQueryForCount` OR 
+    `Conversation.getTotalUnreadMessageCount()` based on requirements.
+
+## Bug Fixes
+  * Fixed a `ClassCastException` warning in `LayerClient.sendLogs()`
+  * Fixed a null pointer exception in CacheWindow (APPS-2449)
+  * Queries for object IDs are now case insensitive (APPS-2106)
+
 # 0.20.4
 
 ### Features
