@@ -6,7 +6,7 @@ If you have any questions, comments, or issues related to any products distribut
 
 ## Layer SDK
 
-This repository contains releases of the Android SDK for interacting with the Layer communications cloud. It provides a simple, object oriented interface to the rich messaging capabilities provided by the platform.  See the [changelog](releases/com/layer/sdk/layer-sdk/CHANGELOG.md) for the latest version and updates.
+This repository contains releases of the Android SDK for interacting with the Layer communications cloud. It provides a simple, object oriented interface to the rich messaging capabilities provided by the platform.  See the [changelog](CHANGELOG.md) for the latest version and updates.
 
 In order to use the SDK you must be a registered developer with a provisioned application identifier and have configured a backend system to act as an identity provider for your client applications. All aspects of this setup are covered in detail in the [Layer Integration Guide](https://preview.layer.com/docs/integration).
 
