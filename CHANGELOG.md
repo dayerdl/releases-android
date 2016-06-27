@@ -1,5 +1,11 @@
 # Android SDK Change Log
 
+## 0.21.2
+
+### Features
+  * Support for Android N
+  * Increased SSL timeouts to improve performance in poor networks
+  
 ## 0.21.1
 
 ### Features
@@ -116,8 +122,6 @@
  * Corrected LayerClient configuration check with `android.permission.GET_ACCOUNTS` (APPS-2288).
  * Corrected from `android:maxSdkVersion="15"` to `android:maxSdkVersion="18"` since `maxSdkVersion`
    was introduced in Android API 19.
-
- ## Bug Fixes
  * Fixed an issue where Historic sync was stuck. (APPS-2295)
 
 ## 0.19.3
