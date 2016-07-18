@@ -1,5 +1,16 @@
 # Android SDK Change Log
 
+## 0.21.3
+
+### Features
+  * Update to Google Play Services `9.2.0`
+
+### Bug Fixes
+  * Remove requirement to have extra participants while creating conversation (APPS-2486)
+  * Fixed an issue in Sync, with log "Stream Id is null" (APPS-2496)
+  * Fixed an issue where ListViewController.PreProcessCallback.onCache was missing for item 0 (APPS-2513)
+  * Updates to logs
+  
 ## 0.21.2
 
 ### Features
