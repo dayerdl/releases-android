@@ -1,5 +1,41 @@
 # Android SDK Change Log
 
+## 0.22.0
+
+### Features
+  * Support for Identities
+
+### Bug Fixes
+  * Updates to logs
+  * Fixed a crash when receiving a push message with a null extras bundle (APPS-2571)
+
+### Migration Guide
+  `Identity` objects have mostly replaced the use of user ID strings. If a user ID is needed in a place where an `Identity` object is returned, call `Identity.getUserId()`.
+
+#### `LayerClient`
+  * `newConversation(...)` methods now take `Identity` objects. Replace these calls with `newConversationWithUserIds(...)` to keep using the user IDs. Otherwise, `Identity` objects will need to be used in the method arguments.
+  * `getAuthenticatedUserId()` has been removed. Replace these calls with `getAuthenticatedUser()`. This new method returns an `Identity` object, which can be null in the case of an un-authenticated session.
+
+#### `LayerTypingIndicatorListener`
+  * The method signature of `onTypingIndicator()` has changed. The third parameter is now a full `Identity` object instead of just the user's ID.
+
+#### `Conversation`
+  * `addParticipants(...)` methods now take `Identity` objects. Replace these calls with `addParticipantsByIds(...)` to keep using the user IDs. Otherwise, `Identity` objects will need to be used in the method arguments.
+   * Also note that the arguments for these methods are now `Set`s instead of `List`s. This more accurately reflects the particpants since there are no duplicates and order doesn't matter.
+  * `removeParticipants(...)` methods now take `Identity` objects. There is no helper method that takes user IDs as it is always expected to use `Identity` objects when removing participants.
+  * `getParticipants()` now returns a collection of `Identity`s instead of user IDs. Iterators over this collection will need to be updated.
+   * Also note that a `Set` is returned instead of a `List` to more accurately reflect the collection.
+
+#### `Message`
+  * The `Actor` class has been removed. `getSender()` now returns an `Identity` object. This is nullable as the sender is not set until a message is sent or received (e.g. calling `getSender()` immediately after `LayerClient.newMessage()`).
+  * `getRecipientStatus()` now returns a `Map` of `Identity` objects instead of user IDs. Any iterators on this `Map` will need to be updated.
+  * Getting a specific `RecipientStatus` by a user (`getRecipientStatus(...)`) now takes an `Identity` object rather than a user ID.
+
+#### `MessageOptions`
+  * Setting and retrieving user `PushNotificationPayloads` are set and accessed by `Identity` objects rather than user IDs.
+   * `userPushNotificationPayload()`, `userPushNotificationPayloads()` and `getUserPushNotificationPayload()` now take `Identity` objects in their method arguments.
+   * `getUserPushNotificationPayloads()` now returns `Identity` objects as the `Map` keys.
+
 ## 0.21.3
 
 ### Features

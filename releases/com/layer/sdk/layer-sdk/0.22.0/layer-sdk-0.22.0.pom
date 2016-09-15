@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.layer.sdk</groupId>
+  <artifactId>layer-sdk</artifactId>
+  <version>0.22.0</version>
+  <packaging>aar</packaging>
+  <name>Layer SDK library</name>
+  <developers>
+    <developer>
+      <name>Amar Srinivasan</name>
+      <email>amar@layer.com</email>
+    </developer>
+    <developer>
+      <name>Peter Elliott</name>
+      <email>peter@layer.com</email>
+    </developer>
+  </developers>
+  <dependencies>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-nop</artifactId>
+      <version>1.7.12</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.android.gms</groupId>
+      <artifactId>play-services-gcm</artifactId>
+      <version>9.2.0</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>
