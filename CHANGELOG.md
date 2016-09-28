@@ -1,5 +1,59 @@
 # Android SDK Change Log
 
+## 0.23.0
+
+### Features
+  * Support for Firebase cloud messaging
+
+### Migration Guide
+  * Both Firebase and Google cloud messaging are now supported. You no longer need to pass the sender ID to the Layer SDK. This is now read from the `google-services.json` file in your app. You can generate this file from either the Firebase or Google developer console. This may change your API key so be sure to update/add this in your Layer developer console.
+  * Add the `google-services` dependency to your root level `build.gradle` file:
+
+        buildscript {
+            // ...
+            dependencies {
+                // ...
+                classpath 'com.google.gms:google-services:3.0.0'
+            }
+        }
+
+  * Apply the `google-services` plugin at the bottom of your module's `build.gradle` file:
+
+  	apply plugin: 'com.google.gms.google-services'
+
+  * Note that it may be necessary to update the `play-services-gcm` library.
+  * The `GcmBroadcastReceiver` and `GcmIntentService` have been removed. Remove the `com.layer.sdk.services.GcmBroadcastReceiver` and `com.layer.sdk.services.GcmIntentService` components in your `AndroidManifest.xml`.
+  * Add the following to your `AndroidManifest.xml`:
+
+        <service
+            android:name="com.layer.sdk.services.LayerFcmService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.layer.sdk.services.LayerFcmInstanceIdService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+  * If you need to handle GCM/FCM messages you can extend `LayerFcmService`. In `onMessageReceived()`, the following code should execute first to ensure Layer push messages get handled:
+
+        if (isLayerMessage(remoteMessage)) {
+            // Handle message in Layer SDK
+            super.onMessageReceived(remoteMessage);
+            return;
+        }
+
+  * You should be able to continue using existing `GcmReceiver` and `GcmListenerService` as they still receive intents. Thorough testing should be done to verify this behavior.
+  * `LayerClient.Options.googleCloudMessagingSenderId(String)` has been replaced with `LayerClient.Options.useFirebaseCloudMessaging(boolean)`. This should be set to true if using FCM or GCM.
+  * `LayerClient.setGcmRegistrationId(String, String)` has been removed since sender IDs are read from the JSON file and registration is now handled by the Firebase SDK.
+   * If using multiple sender IDs, manually merge the `google-services.json` files by comma separating the `project_number` and adding the additional client(s) to the `client` JSON array.
+  * Change `PushNotificationPayload.fromGcmIntentExtras()` to `PushNotificationPayload.fromLayerPushExtras()` when extracting data from a `Layer.PUSH` action.
+
 ## 0.22.0
 
 ### Features
