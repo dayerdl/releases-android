@@ -1,5 +1,12 @@
 # Android SDK Change Log
 
+## 0.23.1
+
+### Bug fixes
+  * Support for multiple FCM senders (APPS-2606)
+  * Fixed crash when receiving an FCM token refresh before new LayerClient.Options had been saved (APPS-2607)
+  * Sending FCM token to Layer server on same thread that received the token refresh then closing the LayerClient
+  
 ## 0.23.0
 
 ### Features
