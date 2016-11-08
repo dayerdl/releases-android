@@ -1,5 +1,12 @@
 # Android SDK Change Log
 
+## 0.23.2
+
+### Bug fixes
+  * Fixed certificate clearing on de-authentication causing sync to get stuck (APPS-2596)
+  * Improved logging during authentication and de-authentication
+  * Fixing redundant TLS credential creation
+
 ## 0.23.1
 
 ### Bug fixes
