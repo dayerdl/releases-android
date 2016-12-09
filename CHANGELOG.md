@@ -1,5 +1,11 @@
 # Android SDK Change Log
 
+## 0.23.3
+
+### Bug fixes
+  * Switched to ConcurrentHashMap to store Conversation metadata (APPS-2639)
+  * De-authenticating with a `DeauthenticationAction` runs on a separate thread (APPS-2635)
+
 ## 0.23.2
 
 ### Bug fixes
