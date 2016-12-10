@@ -3,7 +3,7 @@
   <groupId>com.layer.sdk</groupId>
   <artifactId>layer-sdk</artifactId>
   <versioning>
-    <release>0.23.3</release>
+    <release>0.23.3-NIGHTLY</release>
     <versions>
       <version>0.7.3</version>
       <version>0.7.5</version>
@@ -97,7 +97,8 @@
       <version>0.23.1</version>
       <version>0.23.2</version>
       <version>0.23.3</version>
+      <version>0.23.3-NIGHTLY</version>
     </versions>
-    <lastUpdated>20161209183417</lastUpdated>
+    <lastUpdated>20161210004940</lastUpdated>
   </versioning>
 </metadata>
