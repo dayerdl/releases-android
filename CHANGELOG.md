@@ -1,5 +1,12 @@
 # Android SDK Change Log
 
+## 0.23.4
+
+### Bug fixes
+  * Not reporting errors that occurred in past sync iterations because they have already been reported (APPS-2671)
+  * Allowing de-authentication when in an authentication challenged state (APPS-2672)
+  * Fixed crash when syncing rich content under the 2KB lower limit (APPS-2667)
+  
 ## 0.23.3
 
 ### Bug fixes
