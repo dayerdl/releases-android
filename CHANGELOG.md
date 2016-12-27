@@ -1,5 +1,10 @@
 # Android SDK Change Log
 
+## 0.23.5
+
+### Features
+   * Add support for imported data
+
 ## 0.23.4
 
 ### Bug fixes
