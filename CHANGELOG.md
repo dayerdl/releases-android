@@ -52,6 +52,8 @@
   * Apply the `google-services` plugin at the bottom of your module's `build.gradle` file:
 
   	apply plugin: 'com.google.gms.google-services'
+    
+  * Add "com.google.firebase:firebase-messaging:9.6.1" into your app/build.gradle
 
   * Note that it may be necessary to update the `play-services-gcm` library.
   * The `GcmBroadcastReceiver` and `GcmIntentService` have been removed. Remove the `com.layer.sdk.services.GcmBroadcastReceiver` and `com.layer.sdk.services.GcmIntentService` components in your `AndroidManifest.xml`.
